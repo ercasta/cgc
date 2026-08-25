@@ -107,15 +107,16 @@ button {
 
 .grids {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 0.75rem;
 }
 
 .panel {
-  padding: 1rem;
+  padding: 0.75rem;
   border: 1px solid #1e293b;
   border-radius: 0.75rem;
   background: #0f172a;
+  min-width: 0;
 }
 
 .metrics {
@@ -136,7 +137,23 @@ canvas {
   .layout {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 480px) {
+  .content {
+    padding: 0.75rem;
+  }
+
+  .grids {
+    gap: 0.5rem;
+  }
+
+  .panel {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 260px) {
   .grids {
     grid-template-columns: 1fr;
   }
