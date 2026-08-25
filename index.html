@@ -32,6 +32,46 @@
         </p>
         <p class="author">Author: <a href="https://github.com/ercasta" target="_blank" rel="noopener noreferrer">ercasta</a></p>
 
+        <details class="rules">
+          <summary>How the rules work</summary>
+          <div class="rules-content">
+            <p>
+              Conway's Game of Chaos extends the classic Game of Life: every
+              live cell also carries a <strong>strength</strong> (0-1) and an
+              <strong>age</strong>, so cells don't just live or die, they
+              weaken and pass on partial strength to their offspring.
+            </p>
+            <ul>
+              <li>
+                <strong>Birth:</strong> a dead cell with exactly 3 live
+                neighbors comes alive, inheriting a strength equal to the
+                average strength of those neighbors scaled by the
+                "Offspring inheritance" setting.
+              </li>
+              <li>
+                <strong>Survival:</strong> a live cell survives only with 2 or
+                3 live neighbors; otherwise it dies from isolation or
+                overcrowding.
+              </li>
+              <li>
+                <strong>Aging:</strong> each step, a surviving cell's strength
+                decays based on the "Aging speed" setting and grows slightly
+                toward its neighbors' average strength.
+              </li>
+              <li>
+                <strong>Death:</strong> a cell dies if its strength drops to
+                or below 0.05, or once it exceeds its maximum age.
+              </li>
+            </ul>
+            <p>
+              The left grid is the reference scenario. The right grid starts
+              from the same seed but with one cell nudged by the "Initial
+              perturbation" setting, so you can watch the two worlds diverge
+              chaotically over time.
+            </p>
+          </div>
+        </details>
+
         <form id="controls">
           <label>
             Seed
