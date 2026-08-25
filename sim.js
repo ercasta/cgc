@@ -73,6 +73,11 @@ export function createInitialGrid(options = {}) {
 
 export function applyPerturbation(grid, amount = DEFAULTS.perturbation) {
   const next = cloneGrid(grid);
+
+  if (amount === 0) {
+    return next;
+  }
+
   const size = next.length;
   const center = Math.floor(size / 2);
   const target = next[center][center];
