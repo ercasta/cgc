@@ -4,7 +4,7 @@ export const DEFAULTS = {
   seedDensity: 0.26,
   baseStrength: 0.82,
   strengthJitter: 0.24,
-  agingSpeed: 0.08,
+  agingSpeed: 0.03,
   inheritance: 0.92,
   resilience: 0.1,
   perturbation: 0.08,
