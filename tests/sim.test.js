@@ -36,6 +36,20 @@ test("initial perturbation creates deterministic divergence", () => {
   assert.deepEqual(applyPerturbation(scenarios.left, 0.11), scenarios.right);
 });
 
+test("zero perturbation leaves both grids identical and evolving in lockstep", () => {
+  const scenarios = createScenarioPair({ size: 9, seed: 12, perturbation: 0 });
+  assert.deepEqual(scenarios.right, scenarios.left);
+  assert.equal(measureDivergence(scenarios.left, scenarios.right), 0);
+
+  let left = scenarios.left;
+  let right = scenarios.right;
+  for (let step = 0; step < 10; step += 1) {
+    left = stepGrid(left);
+    right = stepGrid(right);
+    assert.deepEqual(right, left);
+  }
+});
+
 test("lyapunov estimator reports positive growth for expanding distances", () => {
   const exponent = estimateLyapunov([0.01, 0.02, 0.04, 0.08, 0.16]);
   assert.ok(exponent > 0.65 && exponent < 0.75);

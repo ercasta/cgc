@@ -8,6 +8,8 @@ Strength is modeled as floating-point and quantized after each update so the bro
 
 The repository root is a static site that can be published directly with GitHub Pages.
 
+It is live at [https://ercasta.github.io/cgc/](https://ercasta.github.io/cgc/).
+
 To run it locally:
 
 ```bash
