@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conway's Game of Chaos</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>Conway's Game of Chaos</h1>
+        <p class="lead">
+          Two nearly identical worlds evolve side by side so their chaotic
+          divergence is easy to compare.
+        </p>
+
+        <form id="controls">
+          <label>
+            Seed
+            <input name="seed" type="text" value="42" />
+          </label>
+          <label>
+            Grid size
+            <input name="size" type="number" min="12" max="80" step="1" value="36" />
+          </label>
+          <label>
+            Initial live density
+            <input name="seedDensity" type="range" min="0.05" max="0.55" step="0.01" value="0.26" />
+          </label>
+          <label>
+            Initial strength
+            <input name="baseStrength" type="range" min="0.2" max="1" step="0.01" value="0.82" />
+          </label>
+          <label>
+            Aging speed
+            <input name="agingSpeed" type="range" min="0.01" max="0.25" step="0.01" value="0.08" />
+          </label>
+          <label>
+            Offspring inheritance
+            <input name="inheritance" type="range" min="0.4" max="1" step="0.01" value="0.92" />
+          </label>
+          <label>
+            Initial perturbation
+            <input name="perturbation" type="range" min="0.01" max="0.35" step="0.01" value="0.08" />
+          </label>
+          <label>
+            Step delay (ms)
+            <input name="speedMs" type="number" min="40" max="4000" step="10" value="180" />
+          </label>
+
+          <div class="actions">
+            <button id="play" type="button">Run</button>
+            <button id="step" type="button">Step</button>
+            <button id="reset" type="button">Reset</button>
+            <button id="randomize-seed" type="button">Randomize seed</button>
+          </div>
+        </form>
+      </aside>
+
+      <main class="content">
+        <header class="summary">
+          <strong id="global-metrics"></strong>
+        </header>
+        <section class="grids">
+          <article class="panel">
+            <h2>Reference scenario</h2>
+            <p id="metrics-left" class="metrics"></p>
+            <canvas id="grid-left" width="540" height="540" aria-label="Reference scenario grid"></canvas>
+          </article>
+          <article class="panel">
+            <h2>Perturbed scenario</h2>
+            <p id="metrics-right" class="metrics"></p>
+            <canvas id="grid-right" width="540" height="540" aria-label="Perturbed scenario grid"></canvas>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

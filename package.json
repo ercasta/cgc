@@ -1,0 +1,12 @@
+{
+  "name": "cgc",
+  "version": "1.0.0",
+  "description": "Conway's Game of Chaos",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "simulate": "node cli.js",
+    "test": "node --test"
+  },
+  "license": "ISC"
+}
