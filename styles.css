@@ -26,6 +26,28 @@ body {
   line-height: 1.5;
 }
 
+.repo-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #dbeafe;
+  text-decoration: none;
+}
+
+.repo-link a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.author {
+  color: #93c5fd;
+  margin-top: -0.5rem;
+}
+
+.author a {
+  color: inherit;
+}
+
 #controls {
   display: grid;
   gap: 1rem;
