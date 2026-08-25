@@ -46,11 +46,12 @@ function renderGrid(context, grid) {
     for (let x = 0; x < size; x += 1) {
       const cell = grid[y][x];
       if (!cell.alive) {
-        context.fillStyle = "#06111f";
+        context.fillStyle = "#000000";
       } else {
-        const hue = Math.max(0, 210 - cell.age * 7);
-        const saturation = 60 + Math.round(cell.strength * 30);
-        const lightness = 10 + Math.round(cell.strength * 55);
+        const hue = 210;
+        const ageFade = Math.max(0, 1 - cell.age / 30);
+        const saturation = Math.round((60 + cell.strength * 30) * ageFade);
+        const lightness = Math.round((10 + cell.strength * 55) * ageFade);
         context.fillStyle = `hsl(${hue} ${saturation}% ${lightness}%)`;
       }
 
